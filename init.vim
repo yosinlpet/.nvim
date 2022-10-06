@@ -30,6 +30,7 @@ set nowrap
 set winblend=0
 set wildoptions=pum
 set pumblend=5
+set list
 
 "" LaTeX stuff
 let g:latex_to_unicode_auto = 1 "" unicode symbols autotransform while typing
