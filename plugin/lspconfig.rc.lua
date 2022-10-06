@@ -2,7 +2,7 @@ local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
-local nvim_lsp = require('lspconfig') 
+local nvim_lsp = require('lspconfig')
 
 local on_attach = function(client, bufnr)
   -- format on save
@@ -19,7 +19,7 @@ local on_attach = function(client, bufnr)
   local opts = {noremap = true, silent = true}
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<leader>i', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', '<leader>k', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
 
 local servers = {'julials', 'pyright'}

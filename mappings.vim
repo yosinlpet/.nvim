@@ -10,7 +10,7 @@ map <leader>i <C-w>l
 
 """ Split
 map <leader>v :vs<Space>
-map <leader>n :sp<Space> 
+map <leader>m :sp<Space> 
 
 """ Resize
 map <leader><up> <C-w>+

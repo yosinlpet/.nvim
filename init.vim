@@ -21,7 +21,7 @@ set expandtab
 set backspace=indent,eol,start
 set shiftwidth=2
 set tabstop=2
-set scrolloff=10 
+set scrolloff=10
 set ignorecase
 set breakindent
 set autoindent
@@ -34,10 +34,40 @@ set pumblend=5
 "" LaTeX stuff
 let g:latex_to_unicode_auto = 1 "" unicode symbols autotransform while typing
 let g:tex_flavor='latex'
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
-let g:tex_conceal='abdmg'
+let g:tex_conceal='abdmgs'
+hi clear Conceal
+
+if !exists("g:vim_window_id")
+  let g:vim_window_id = system("xdotool getactivewindow")
+endif
+
+function! s:TexFocusVim() abort
+  " Give window manager time to recognize focus moved to Zathura;
+  " tweak the 200m as needed for your hardware and window manager.
+  sleep 200m
+
+  " Refocus Vim and redraw the screen
+  silent execute "!xdotool windowfocus " . expand(g:vim_window_id)
+  redraw!
+endfunction
+
+augroup vimtex_event_focus
+  au!
+  au User VimtexEventView call s:TexFocusVim()
+augroup END
+
 
 "" Transparency
 let g:transparent_enabled = v:true
@@ -55,3 +85,6 @@ if has("persistent_undo")
     let &undodir=target_path
     set undofile
 endif
+
+"" Remove trailing spaces
+lua vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*" }, command = [[%s/\s\+$//e]]})

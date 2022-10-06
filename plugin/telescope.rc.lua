@@ -13,23 +13,23 @@ telescope.setup {
   defaults = {
     mappings = {
       i = {
-        ["<C-k>"] = {                                                                                                                                            
-          actions.move_selection_previous, type = "action",                                                                                                          
-          opts = { nowait = true, silent = true }                                                                                                                
+        ["<C-e>"] = {
+          actions.move_selection_previous, type = "action",
+          opts = { nowait = true, silent = true }
         },
-        ["<C-j>"] = {                                                                                                                                            
-          actions.move_selection_next, type = "action",                                                                                                          
-          opts = { nowait = true, silent = true }                                                                                                                
+        ["<C-n>"] = {
+          actions.move_selection_next, type = "action",
+          opts = { nowait = true, silent = true }
         }
       },
       n = {
-        ["<C-k>"] = {                                                                                                                                            
-          actions.move_selection_previous, type = "action",                                                                                                          
-          opts = { nowait = true, silent = true }                                                                                                                
+        ["<C-e>"] = {
+          actions.move_selection_previous, type = "action",
+          opts = { nowait = true, silent = true }
         },
-        ["<C-j>"] = {                                                                                                                                            
-          actions.move_selection_next, type = "action",                                                                                                          
-          opts = { nowait = true, silent = true }                                                                                                                
+        ["<C-n>"] = {
+          actions.move_selection_next, type = "action",
+          opts = { nowait = true, silent = true }
         },
         ["q"] = actions.close
       },
@@ -87,7 +87,7 @@ end, opts)
 vim.keymap.set('n', ';t', function()
   builtin.help_tags()
 end, opts)
-vim.keymap.set('n', ';;', function()
+vim.keymap.set('n', ';r', function()
   builtin.resume()
 end, opts)
 vim.keymap.set('n', ';e', function()
