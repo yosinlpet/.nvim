@@ -22,7 +22,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>k', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
 
-local servers = {'julials', 'pyright'}
+local servers = {'julials', 'clangd'}
 vim.cmd[[autocmd Filetype julia setlocal omnifunc=v:lua.vim.lsp.omnifunc]]
 
 for _, lsp in ipairs(servers) do
