@@ -1,17 +1,16 @@
 source ~/.config/nvim/mappings.vim
+source ~/.config/nvim/whitespace.vim
 lua require('plugins')
 lua require('gitsigns').setup()
 lua require('git').setup()
 
-
 "" Colour Scheme
-lua require("onedarkpro").setup({dark_theme="onedark_dark"})
-set termguicolors
+lua require("onedarkpro").setup({dark_theme="onedark_vivid"})
 colorscheme onedarkpro
+set termguicolors
 lua require('colorizer').setup()
 
 "" Base
-set autoindent
 set number
 set relativenumber
 set hlsearch
@@ -21,8 +20,9 @@ set expandtab
 set backspace=indent,eol,start
 set shiftwidth=2
 set tabstop=2
-set scrolloff=10 
+set scrolloff=10
 set ignorecase
+set smartcase
 set breakindent
 set autoindent
 set smartindent
@@ -30,14 +30,29 @@ set nowrap
 set winblend=0
 set wildoptions=pum
 set pumblend=5
+set list
+set splitright
+set splitbelow
 
 "" LaTeX stuff
 let g:latex_to_unicode_auto = 1 "" unicode symbols autotransform while typing
 let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
+let g:vimtex_view_method='skim' "" use zathura on Linux
+let g:vimtex_view_skim_sync = 1
+let g:vimtex_view_skim_activate = 0
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
-let g:tex_conceal='abdmg'
+hi clear Conceal
+let g:tex_conceal='abdmgs'
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 
 "" Transparency
 let g:transparent_enabled = v:true

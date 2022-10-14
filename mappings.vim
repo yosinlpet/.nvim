@@ -10,7 +10,7 @@ map <leader>i <C-w>l
 
 """ Split
 map <leader>v :vs<Space>
-map <leader>n :sp<Space> 
+map <leader>m :sp<Space>
 
 """ Resize
 map <leader><up> <C-w>+
@@ -36,3 +36,13 @@ noremap L I
 noremap J E
 
 nnoremap <leader>u :UndotreeToggle<CR>
+
+"" Quickfix List
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+nnoremap <silent> <leader>q :call ToggleQuickFix()<cr>
