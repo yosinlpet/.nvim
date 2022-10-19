@@ -2,6 +2,7 @@ return require('packer').startup(function()
   use "wbthomason/packer.nvim"
 
   use "olimorris/onedarkpro.nvim"
+  use "Mofiqul/dracula.nvim"
   use "xiyaowong/nvim-transparent"
   use "JuliaEditorSupport/julia-vim"
   use "lervag/vimtex"
@@ -15,6 +16,7 @@ return require('packer').startup(function()
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-path"
   use "saadparwaiz1/cmp_luasnip"
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"

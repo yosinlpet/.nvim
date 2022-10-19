@@ -2,6 +2,10 @@ let mapleader = " "
 
 inoremap nn <ESC>
 
+"" copy to clipboard
+nnoremap <leader>y "*y
+vnoremap <leader>y "*y
+
 "" Navigate through windows
 map <leader>h <C-w>h
 map <leader>n <C-w>j

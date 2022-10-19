@@ -33,6 +33,7 @@ set pumblend=5
 set list
 set splitright
 set splitbelow
+set mouse=""
 
 "" LaTeX stuff
 let g:latex_to_unicode_auto = 1 "" unicode symbols autotransform while typing
