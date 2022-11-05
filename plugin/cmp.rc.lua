@@ -41,12 +41,12 @@ cmp.setup({
       end
     end, { "i", "s" }),
 
-    ["<CR>"] = cmp.mapping.confirm {
+    ["<CR><CR>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true },
   }),
   sources = cmp.config.sources({
-    { name = 'path' },
+    { name = 'path', option = {trailing_slash = true} },
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'luasnip' },

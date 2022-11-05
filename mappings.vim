@@ -41,6 +41,7 @@ noremap J E
 
 nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>c :edit $MYVIMRC<CR>
+nnoremap <leader>s :source $MYVIMRC<CR>
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 
 "" Quickfix List
