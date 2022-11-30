@@ -30,7 +30,7 @@ vim.cmd[[autocmd Filetype julia setlocal omnifunc=v:lua.vim.lsp.omnifunc]]
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup{
     on_attach = on_attach,
-    cpatibilities = require('cmp_nvim_lsp').update_capabilities(protocol.make_client_capabilities())
+    cpatibilities = require('cmp_nvim_lsp').default_capabilities(protocol.make_client_capabilities())
   }
 end
 
