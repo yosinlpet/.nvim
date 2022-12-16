@@ -2,17 +2,18 @@ return require('packer').startup(function()
   use "wbthomason/packer.nvim"
 
   use "folke/tokyonight.nvim"
+  use "rose-pine/neovim"
   use "olimorris/onedarkpro.nvim"
   use "ellisonleao/gruvbox.nvim"
   use "Mofiqul/dracula.nvim"
-  use "xiyaowong/nvim-transparent"
 
   use "JuliaEditorSupport/julia-vim"
   use "lervag/vimtex"
   use "tpope/vim-surround"
   use "tpope/vim-commentary"
   use "AndrewRadev/switch.vim"
-  use "nvim-treesitter/nvim-treesitter"
+  use ("nvim-treesitter/nvim-treesitter", {run = ':TSUpdate'})
+  use "nvim-treesitter/playground"
   use "nvim-lualine/lualine.nvim"
   use "onsails/lspkind.nvim"
   use "windwp/nvim-autopairs"

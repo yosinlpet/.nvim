@@ -11,6 +11,7 @@ ts.setup {
     disable = {"julia"},
   },
   ensure_installed = {
+    "help",
     "julia",
     "python",
     "bash",

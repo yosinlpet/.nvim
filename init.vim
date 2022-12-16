@@ -5,8 +5,7 @@ lua require('gitsigns').setup()
 lua require('git').setup()
 
 "" Colour Scheme
-lua require("onedarkpro").setup({dark_theme="onedark_vivid"})
-colorscheme onedarkpro
+colorscheme dracula
 set termguicolors
 lua require('colorizer').setup()
 
@@ -34,6 +33,7 @@ set list
 set splitright
 set splitbelow
 set mouse=""
+set updatetime=50
 
 "" LaTeX stuff
 let g:latex_to_unicode_auto = 1 "" unicode symbols autotransform while typing

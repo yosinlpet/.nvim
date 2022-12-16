@@ -4,6 +4,7 @@ inoremap nn <ESC>
 
 "" copy to clipboard
 nnoremap <leader>y "*y
+nnoremap <leader>Y "*Y
 vnoremap <leader>y "*y
 
 "" Navigate through windows
@@ -40,9 +41,14 @@ noremap L I
 noremap J E
 
 nnoremap <leader>u :UndotreeToggle<CR>
+
 nnoremap <leader>c :edit $MYVIMRC<CR>
 nnoremap <leader>s :source $MYVIMRC<CR>
+
+nnoremap <leader>tr :lua ColorMyPencils()<CR>
+
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+nnoremap <leader>x :!chmod +x %<CR><CR>
 
 "" Quickfix List
 function! ToggleQuickFix()
